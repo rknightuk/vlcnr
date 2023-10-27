@@ -63,6 +63,12 @@
         rel="stylesheet" />
 
     <style>
+        :root {
+            --vlcnr-red: #F9423A;
+            --vlcnr-black: #25282A;
+            --vlcnr-dark-grey: #63666A;
+            --vlcnr-grey: #888B8D;
+        }
         * {
             box-sizing: border-box;
         }
@@ -102,7 +108,7 @@
             width: 100px;
             height: 100px;
             border: 3px solid;
-            border-color: black;
+            border-color: var(--vlcnr-black);
             border-radius: 100px;
             text-align: center;
             display: flex;
@@ -222,13 +228,13 @@
 
         .dark .subtitle,
         .dark .info-button {
-            color: #e54134;
+            color: var(--vlcnr-red);
         }
 
         .dark .sounds-button,
         .dark .info-button {
-            border-color: #000000;
-            background: #000000;
+            border-color: var(--vlcnr-black);
+            background: var(--vlcnr-black);
         }
 
         .dark .triangle-background {
@@ -236,7 +242,7 @@
         }
 
         .dark .sounds-number {
-            color: #e54134;
+            color: var(--vlcnr-red);
             font-size: 40px;
         }
 
@@ -258,7 +264,7 @@
 
         dialog {
             z-index: 3;
-            border: 3px solid #fb2043;
+            border: 3px solid var(--vlcnr-red);
             font-size: 18px;
             max-width: 400px;
             margin: 0 auto;
@@ -269,8 +275,8 @@
         }
 
         .dark dialog {
-            background-color: black;
-            color: #e54134;
+            background-color: var(--vlcnr-black);
+            color: var(--vlcnr-red);
         }
 
         .dark a {
