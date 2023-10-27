@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="322" height="283" viewBox="0 0 322 283" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path id="Path" fill="#848587" fill-rule="evenodd" stroke="none" d="M 242 75 L 161 283 L 322 283 L 242 75 Z"/>
+    <path id="Path-copy" fill="#2a2a2a" fill-rule="evenodd" stroke="none" d="M 108 0 L 0 283 L 161 283 L 189 212 L 108 0 Z"/>
+    <path id="path1" fill="#636164" fill-rule="evenodd" stroke="none" d="M 161 142 L 216 0 L 242 75 L 189 212"/>
+    <path id="Triangle" fill="#e63839" fill-rule="evenodd" stroke="none" d="M 161 142 L 216 0 L 108 0 Z"/>
+</svg>

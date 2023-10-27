@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<!-- 
+                           (((((((((((((((((((((((((((                          
+                          &&(((((((((((((((((((((((((##                         
+                         &&&&(((((((((((((((((((((((####                        
+                        &&&&&&(((((((((((((((((((((######                       
+                       &&&&&&&&(((((((((((((((((((########                      
+                      &&&&&&&&&&(((((((((((((((((#########%                     
+                     &&&&&&&&&&&&(((((((((((((((###########%                    
+                    &&&&&&&&&&&&&&(((((((((((((#############                    
+                   &&&&&&&&&&&&&&&&(((((((((((##############/                   
+                  &&&&&&&&&&&&&&&&&&(((((((((##############///                  
+                  &&&&&&&&&&&&&&&&&&&(((((((##############/////                 
+                 &&&&&&&&&&&&&&&&&&&&%(((((##############///////                
+                &&&&&&&&&&&&&&&&&&&&&&%(((##############/////////               
+               &&&&&&&&&&&&&&&&&&&&&&&&#(##############///////////              
+              &&&&&&&&&&&&&&&&&&&&&&&&&&##############/////////////             
+             &&&&&&&&&&&&&&&&&&&&&&&&&&&&############///////////////            
+            &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&##########/////////////////           
+           &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&########///////////////////          
+          &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&######/////////////////////         
+         &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&####///////////////////////        
+        &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&##/////////////////////////       
+       &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&///////////////////////////      
+      &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&/////////////////////////////     
+     &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&///////////////////////////////    
+    &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&/////////////////////////////////   
+   &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&///////////////////////////////////  
+  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&(//////////////////////////////////// 
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&(//////////////////////////////////////
+
+                                #VLCNRForever
+ -->
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>VLCNR</title>
+
+    <meta property='og:title' content='VLCNR' />
+    <meta property='description' content='VLCNR' />
+    <meta property='og:description' content='VLCNR' />
+    <meta property='og:type' content='article' />
+    <meta property='og:url' content='https://vlcnr.rknight.me' />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#2e3032">
+    <link rel='icon' type='image/x-icon' href='icons/favicon.ico'>
+
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link
+        href="https://fonts.bunny.net/css?family=abeezee:400|allerta:400|amaranth:400,400i,700,700i|cambay:400,400i,700,700i"
+        rel="stylesheet" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 400px;
+            margin: 0 auto;
+            font-family: 'Cambay', sans-serif;
+            font-size: 1.5em;
+            padding: 0 20px 20px 20px;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: normal;
+            font-size: 2.5em;
+            margin-bottom: 0;
+        }
+
+        .subtitle {
+            color: #70c1f7;
+            margin-top: -20px;
+        }
+
+        .sounds {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+
+        .sounds-button {
+            cursor: pointer;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border: 3px solid;
+            border-color: black;
+            border-radius: 100px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sounds-item {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .sounds-number {
+            z-index: 2;
+            color: white;
+            font-size: 25px;
+            margin-top: 5px;
+        }
+
+        .triangle-background {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 20px;
+            right: 0;
+            text-align: center;
+            width: 70px;
+            height: 70px;
+            z-index: 1;
+        }
+
+        .one { color: #fc0d43; border-color: #fc0d43; }
+        .two { color: #43d453; border-color: #43d453; }
+        .three { color: #ffc30b; border-color: #ffc30b; }
+        .four { color: #4dbbf7; border-color: #4dbbf7; }
+
+        .five { border: none; display: block; }
+        .five .sounds-fire { font-size: 1em; }
+        .five .sounds-fire img { height: 100px; }
+
+        .six { color: #7c7b82; border-color: #7c7b82; }
+        .seven { color: #463bcc; border-color: #463bcc; }
+        .eight { color: #fc820a; border-color: #fc820a; }
+        .nine { color: #fb1e44; border-color: #fb1e44; }
+
+        @media (max-width: 400px) {
+            .sounds-button {
+                width: 75px;
+                height: 75px;
+            }
+
+            .triangle-background {
+                left: 15px;
+                width: 55px;
+                height: 55px;
+            }
+
+            .five .sounds-fire img { 
+                height: 75px; 
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
+
+        .shake-slow {
+            animation: shake 3s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        .info {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-button {
+            border: 3px solid;
+            border-radius: 100px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #31cdff;
+            border-color: #31cdff;
+            cursor: pointer;
+        }
+
+        .info-button .icon {
+            width: 30px;
+            height: 30px;
+            margin-top: 3px;
+        }
+
+        body.dark {
+            background: #2e3032;
+            color: white;
+        }
+
+        .dark .subtitle,
+        .dark .info-button {
+            color: #e54134;
+        }
+
+        .dark .sounds-button,
+        .dark .info-button {
+            border-color: #000000;
+            background: #000000;
+        }
+
+        .dark .triangle-background {
+            display: none;
+        }
+
+        .dark .sounds-number {
+            color: #e54134;
+            font-size: 40px;
+        }
+
+        .dark .five {
+            background: none;
+        }
+
+        .dark-mode {
+            display: none;
+        }
+
+        .dark .dark-mode {
+            display: flex;
+        }
+
+        .dark .light-mode {
+            display: none;
+        }
+
+        dialog {
+            z-index: 3;
+            border: 3px solid #fb2043;
+            font-size: 18px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        dialog p {
+            margin: 0;
+        }
+
+        .dark dialog {
+            background-color: black;
+            color: #e54134;
+        }
+
+        .dark a {
+            color: white;
+        }
+
+        .hashtag {
+            color: white;
+        }
+
+        .dark .hashtag {
+            color: #2e3032;
+        }
+    </style>
+
+    <script src="https://cdn.usefathom.com/script.js" data-site="NRRPDNQD" defer></script>
+
+</head>
+
+<body>
+
+    <dialog>
+        <p><strong>VLCNR Soundboard</strong></p>
+        <p>Created by <a href="https://rknight.me">Robb Knight</a></p>
+        <p>Original design by <a href="https://mastodon.macstories.net/@johnvoorhees">John Voorhees</a></p>
+        <p>I don't think anyone knows where the Suspense accents came from.</p>
+        <p><a href="https://github.com/rknightuk/vlcnr">Source</a></p>
+        <form method="dialog">
+            <button>Close</button>
+        </form>
+    </dialog>
+
+    <header>
+        <h1><img src="assets/vlcnr.svg" height="43">Vlcnr</h1>
+        <p class="subtitle">Suspense Accents</p>
+    </header>
+    
+    <div class="sounds">
+        <div class="sounds-item" data-sound="1">
+            <div class="sounds-button sounds-button one">
+                <svg class="triangle-background">
+                    <use xlink:href="#triangle"></use>
+                </svg>
+                <div class="sounds-number">1</div>
+            </div>
+        </div>
+        <div class="sounds-item" data-sound="2">
+            <div class="sounds-button two">
+                <svg class="triangle-background">
+                    <use xlink:href="#triangle"></use>
+                </svg>
+                <div class="sounds-number">2</div>
+            </div>
+        </div>
+        <div class="sounds-item" data-sound="3">
+            <div class="sounds-button three">
+                <svg class="triangle-background">
+                    <use xlink:href="#triangle"></use>
+                </svg>
+                <div class="sounds-number">3</div>
+            </div>
+        </div>
+        <div class="sounds-item" data-sound="4">
+            <div class="sounds-button four">
+                <svg class="triangle-background">
+                    <use xlink:href="#triangle"></use>
+                </svg>
+                <div class="sounds-number">4</div>
+            </div>
+        </div>
+        <div class="sounds-item" data-sound="random">
+            <div class="sounds-button five">
+                <div class="sounds-fire">
+                    <img src="assets/fire.svg">
+                </div>
+            </div>
+        </div>
+        <div class="sounds-item" data-sound="5">
+            <div class="sounds-button six">
+                <svg class="triangle-background">
+                    <use xlink:href="#triangle"></use>
+                </svg>
+                <div class="sounds-number">5</div>
+            </div>
+        </div>
+        <div class="sounds-item" data-sound="6">
+            <div class="sounds-button seven">
+                <svg class="triangle-background">
+                    <use xlink:href="#triangle"></use>
+                </svg>
+                <div class="sounds-number">6</div>
+            </div>
+        </div>
+        <div class="sounds-item" data-sound="7">
+            <div class="sounds-button eight">
+                <svg class="triangle-background">
+                    <use xlink:href="#triangle"></use>
+                </svg>
+                <div class="sounds-number">7</div>
+            </div>
+        </div>
+        <div class="sounds-item" data-sound="8">
+            <div class="sounds-button nine">
+                <svg class="triangle-background">
+                    <use xlink:href="#triangle"></use>
+                </svg>
+                <div class="sounds-number">8</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="info">
+        <div id="theme" class="info-button">
+            <svg class="icon dark-mode">
+                <use xlink:href="#sun"></use>
+            </svg>
+            <svg class="icon light-mode">
+                <use xlink:href="#moon"></use>
+            </svg>
+        </div>
+        <div class="hashtag">
+            #VLCNRForever
+        </div>
+        <div id="info-show" class="info-button">
+            <svg class="icon">
+                <use xlink:href="#info"></use>
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const sounds = [
+                new Audio('sounds/1.mp3'),
+                new Audio('sounds/2.mp3'),
+                new Audio('sounds/3.mp3'),
+                new Audio('sounds/4.mp3'),
+                new Audio('sounds/5.mp3'),
+                new Audio('sounds/6.mp3'),
+                new Audio('sounds/7.mp3'),
+                new Audio('sounds/8.mp3'),
+            ]
+
+            const timings = [
+                1000,
+                3000,
+                1000,
+                1000,
+                1000,
+                2500,
+                5500,
+                3000,
+            ]
+
+            const classNames = [
+                'shake',
+                'shake',
+                'shake',
+                'shake',
+                'shake',
+                'shake',
+                'shake',
+                'shake-slow',
+            ]
+
+            document.getElementById('info-show').addEventListener('click', (e) => {
+                const dialog = document.querySelector("dialog")
+                dialog.show()
+            })
+
+            const closeButton = document.querySelector("dialog button").addEventListener("click", () => {
+                dialog.close()
+            })
+
+            document.getElementById('theme').addEventListener('click', (e) => {
+                const body = document.getElementsByTagName('body')[0]
+                if (body.classList.contains('dark'))
+                {
+                    document.querySelector('meta[name="theme-color"]').content = 'white'
+                    body.classList.remove('dark')
+                } else {
+                    body.classList.add('dark')
+                    document.querySelector('meta[name="theme-color"]').content = '#2e3032'
+                }
+            })
+
+            Array.from(document.getElementsByClassName('sounds-item')).forEach((b => {
+                b.addEventListener('click', (b) => {
+                    const element = b.currentTarget
+                    let soundIndex = element.dataset.sound === 'random' ? element.dataset.sound : element.dataset.sound - 1
+                    if (soundIndex === 'random')
+                    {
+                        soundIndex = Math.floor(Math.random() * 8)
+                    }
+                    if (window.fathom) 
+                    {
+                        let event = `Suspense Accent ${soundIndex + 1}`
+                        if (soundIndex == 7) event = 'Soft Matt'
+                        window.fathom.trackEvent(event)
+                    }
+                    sounds[soundIndex].play()
+                    const className = classNames[soundIndex]
+                    element.classList.add(className)
+                    setTimeout(() => {
+                        element.classList.remove(className)
+                    }, timings[soundIndex])
+                })
+            }))
+        })()
+    </script>
+
+    <svg width="0" height="0" class="hidden">
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 335 386" id="triangle">
+            <path id="Triangle" fill="currentColor" fill-rule="evenodd" stroke="none"
+                d="M 335 193.300888 L -0 0.601776 L -0 386 Z"></path>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 322 283"
+            id="vlcnr">
+            <path id="Path" fill="#848587" fill-rule="evenodd" stroke="none" d="M 242 75 L 161 283 L 322 283 L 242 75 Z">
+            </path>
+            <path id="Path-copy" fill="#2a2a2a" fill-rule="evenodd" stroke="none"
+                d="M 108 0 L 0 283 L 161 283 L 189 212 L 108 0 Z"></path>
+            <path id="path1" fill="#636164" fill-rule="evenodd" stroke="none" d="M 161 142 L 216 0 L 242 75 L 189 212">
+            </path>
+            <path id="Triangle" fill="#e63839" fill-rule="evenodd" stroke="none" d="M 161 142 L 216 0 L 108 0 Z"></path>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" height="1em"
+        id="fire"
+            viewBox="0 0 448 512">
+            <path
+                d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-4.5-9-16-9.6-22.5-2l-25.2 29.3c-6.6 7.6-18.5 7.4-24.7-.5c-16.5-21-46-58.5-62.8-79.8c-6.3-8-18.3-8.1-24.7-.1c-33.8 42.5-50.8 69.3-50.8 99.4C112 375.4 162.6 416 225.7 416z" />
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" height="1em" id="info"
+            viewBox="0 0 192 512">
+            <path
+                fill="currentColor" d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z" />
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" height="1em" id="sun"
+            viewBox="0 0 512 512">
+            <path
+                fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z" />
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" height="1em" id="moon"
+            viewBox="0 0 512 512">
+            <path
+                fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z" />
+        </symbol>
+    </svg>
+</body>
+
+</html>
